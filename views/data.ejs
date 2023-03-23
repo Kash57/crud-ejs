@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <a href ="/"><button class="btn" type="button">Add new user</button></a>
+    
+      <table border = "1">
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Email</th>
+            <th>DOB</th>
+            <th>Address</th>
+            <th></th>
+            <th></th>
+        </tr>
+         <% users.forEach(function(User){ %>
+          <tr>
+             <td> <%= User.fname%> </td>
+             <td><%= User.lname%></td>
+             <td><%= User.email%></td>
+             <td><%= User.dob%></td>
+             <td><%= User.address%></td>
+             <td><a href="/edit/<%= User.id %>">
+                <button type="button">Edit</button></a></td>
+             <td><a href="/delete/<%= User.id %>">Delete</a></td>
+         </tr>
+    <%})%>
+</table>
+
+</body>
+</html>
+   

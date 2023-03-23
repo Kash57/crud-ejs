@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>
+            Form
+        </title>
+        <!-- <link rel="stylesheet" href="reg.css">        -->
+    </head>
+    <body>   
+        <div>
+          <% users.forEach(function(User){ %>
+            <form autocomplete="off" action = "/update/<%= User.id%>" method="post">
+              <table>
+                <tr>
+                  <td><label for="name">FirstName:</label></td>
+    <td><input type="text" name="fname" id="fname" value="<%= User.fname%>" placeholder="your name"></td>
+                </tr>
+                <tr>
+                    <td><label for="name">LastName:</label></td>
+                    <td><input type="text" name="lname" id="lname" value="<%= User.lname%>" placeholder="your name"></td>
+                  </tr>
+                <tr>
+                  <td><label for="email">Email:</label></td>
+                  <td><input type="email" name="email" id="email"  value="<%= User.email%>" placeholder="your email"></td>
+                </tr>
+                <tr>
+                  <td><label for="password">Password:</label></td>
+                  <td><input type="password" name="password" id="password" value="<%= User.password%>"></td>
+                </tr>
+                <tr>
+                  <td><label for="phonenumber">Phone Number:</label></td>
+                  <td><input type="number" name="phonenumber" id="phonenumber" value="<%= User.phonenumber%>"></td>
+                </tr>
+                <tr>
+                  <td><label for="bloodgroup">Bloodgroup</label></td>
+                  <td>
+                    <select name="bloodgroup" id="bloodgroup" value="<%= User.bloodgroup%>">
+                      <option value="">Select bloodgroup</option>
+                      <option value="AB+">AB+</option>
+                      <option value="B+">B+</option>
+                      <option value="A+">A+</option>
+                      <option value="A-">A-</option>
+                      <option value="O+">O+</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="dob">DOB:</label>
+                        <input type="date" name="dob" id="dob" value="<%= User.dob%>">
+                    </td>
+                </tr>
+                <tr>
+                  <td><label for="address">Address:</label></td>
+                  <td><textarea name="address" id="address" value="<%= User.address%>" placeholder="Write your address"></textarea></td>
+                </tr>
+                <tr>
+                  <td><input type="submit" name="update" value="submit" value="<%= User.id%>" </td>
+                </tr>
+              </table>
+            </form>
+            <% }) %> 
+          </div> 
+    </body>
+</html>        
